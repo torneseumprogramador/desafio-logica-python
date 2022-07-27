@@ -24,6 +24,9 @@ litro_posto = float(input())
 print("Digite a quantidade de litros para preencher a quantidade total:")
 atual_posto = float(input())
 
+### TODO Capturar o valor por litro
+
+
 print(f"A capacidade de nossos tanques é: {litro_posto} litros")
 print(f"A quantidade que ficou no posto foi: {atual_posto} litros")
 total_porcentagem = atual_posto / litro_posto * 100
