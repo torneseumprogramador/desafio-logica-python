@@ -39,7 +39,12 @@ if somar_resultados > 100:
     print("=========================")
     print(f"O resultado alcançado foi {somar_resultados} parabéns")
     print("=========================")
+elif somar_resultados >= 10 and somar_resultados <= 20:
+    print("=========================")
+    print(f"O resultado alcançado está entre 10 e 20 - {somar_resultados} parabéns")
+    print("=========================")
 else:
     print("=========================")
     print("O resultado alcançado foi xxx e ficou abaixo da expectativa")
     print("=========================")
+
