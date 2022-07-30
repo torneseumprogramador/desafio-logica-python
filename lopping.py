@@ -2,6 +2,20 @@
 # https://www.w3schools.com/python/python_for_loops.asp
 
 
+# exemplo com continue
+print("Exemplo while true/continue") # while = enquanto
+while True:
+    numero = int(input("Digite 0 para sair\n"))
+    
+    if numero == 10:
+        continue
+
+    print(f"Você digitou o número {numero}")
+
+    if numero == 0:
+        break
+
+
 # eu não sei exatamente quando tenho que terminar
 print("Exemplo while") # while = enquanto
 while True:
