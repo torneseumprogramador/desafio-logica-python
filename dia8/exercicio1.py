@@ -46,7 +46,7 @@ for indice in range(0, qtd):
   situacao = "Aprovado"
   if media < 5:
     situacao = "Reprovado"
-  elif media >=5 and media <= 7:
+  elif media >= 5 and media <= 7:
     situacao = "Recuperação"
   
   aluno.append(situacao)
