@@ -1,4 +1,6 @@
 """
+Utilizando Dict, faça:
+
 Danilo é dono de uma escola de programação, faça um programa
 solicite a quantidade de alunos, capture 3 notas de alunos
 no final do programa mostre um relatório identificando se os alunos
