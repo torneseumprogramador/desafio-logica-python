@@ -26,38 +26,43 @@ Média: 5.5
 Situação: Recuperacao
 -----------------------
 """
+import os
 
-print("===============[Bem vindo ao programa de alunos]==============")
-qtd = int(input("Digite a quantidade de alunos:\n"))
-alunos = []
-for indice in range(0, qtd):
-  aluno = []
-  nome = input(f"Digite o nome do aluno de número {indice+1}:\n")
-  aluno.append(nome)
+lista_de_aluno = []
+quantidade_de_notas = 3
 
-  notas = []
-  for i in range(0, 3):
-    notas.append(float(input(f"Digite a nota {i+1} do(a) {nome}\n")))
+os.system("clear")
 
-  aluno.append(notas)
-  media = sum(notas) / len(notas)
-  aluno.append(media)
+print("============[ CADASTRO DE NOTA ]================\n")
+quantidade_aluno = int(input("Informe a quantidade de alunos:"))
+for i in range(0, quantidade_aluno):
+    media = 0
+    notas = []
+    situacao = "Aprovado"
+    aluno = {}
 
-  situacao = "Aprovado"
-  if media < 5:
-    situacao = "Reprovado"
-  elif media >= 5 and media <= 7:
-    situacao = "Recuperação"
-  
-  aluno.append(situacao)
+    aluno["nome"] = input(f"\nInforme nome do aluno {i+1}:")
 
-  alunos.append(aluno)
+    for y in range(0, quantidade_de_notas):
+        nota = 0
+        notas.append(float(input(f"Digite nota {y + 1}: ")))
 
-print("=============[Lista de alunos]==============")
-for aluno in alunos:
-  print(f"Nome: {aluno[0]}")
-  print(f"Notas: {aluno[1]}")
-  print(f"Média: {aluno[2]}")
-  print(f"Situação: {aluno[3]}")
-  print("-----------------------")
+    media = float("{:0.2f}".format(sum(notas) / quantidade_de_notas))
+    aluno["media"] = media
+    aluno["notas"] = notas
 
+    if media >= 5 and media <= 7:
+        situacao = "Recuperação"
+    elif media < 5:
+        situacao = "Reprovado"
+
+    aluno["situacao"] = situacao
+    lista_de_aluno.append(aluno)
+    del aluno
+
+print("\n============[ Lista de alunos ]================\n")
+for aluno in lista_de_aluno:
+    for chave, valor in aluno.items():
+        print(f"{chave}: {valor}")
+    print("\n")
+print("===============================================\n")
