@@ -7,20 +7,24 @@
 # Telefone: XXXXXXX
 # Endereço: XXXXXXX
 # =========================================================
-import os
+def exec():
+    import os
 
-print("================ Bem vindo ao sistema de cadastro =================")
-print("Digite o seu nome:")
-nome = input()
-print("Digite o seu telefone:")
-telefone = input()
-print("Digite o seu endereço:")
-endereco = input()
+    print("================ Bem vindo ao sistema de cadastro =================")
+    print("Digite o seu nome:")
+    nome = input()
+    print("Digite o seu telefone:")
+    telefone = input()
+    print("Digite o seu endereço:")
+    endereco = input()
 
-os.system('clear')
+    os.system('clear')
 
-print("========== Programa de formatação de dados ==============")
-print("Nome: " + nome)
-print("Telefone: " + telefone)
-print("Endereço: " + endereco)
-print("=========================================================")
+    print("========== Programa de formatação de dados ==============")
+    print("Nome: " + nome)
+    print("Telefone: " + telefone)
+    print("Endereço: " + endereco)
+    print("=========================================================")
+
+if __name__ == "__main__":
+    exec()
