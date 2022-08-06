@@ -11,3 +11,4 @@ leitura dos clientes cadastrados no disco
 3 - sair
 
 """
+# https://github.com/walterpaulo/logica-python/tree/main/aulas/11/exercicio1
