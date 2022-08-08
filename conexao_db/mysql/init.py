@@ -1,4 +1,16 @@
+###### Não deixe o nome deste arquivo como init.py dá incompatibilidade ##########
+
 """
+# para o S.O.
+sudo apt update
+sudo apt install mysql-server
+
+sudo mysql
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'; flush privileges;
+
+mysql -uroot -p'root'
+
 create database desafio_21_dias_python;
 
 use desafio_21_dias_python;
@@ -35,17 +47,32 @@ select * from usuarios;
 # Pipenv - gerenciador de pacotes python
 - https://thoughtbot.com/blog/how-to-manage-your-python-projects-with-pipenv
 
+# para o S.O.
+sudo apt update
+sudo apt-get install libmysqlclient-dev
+sudo apt-get install libssl-dev
+sudo apt-get install -y python3-mysqldb
+sudo apt install python3-pip
 
-# usando pip env
+git clone https://github.com/torneseumprogramador/desafio-logica-python
+
+#### usando pip
+pip install mysql-connector-python
+python3 init.py 
+
+
+#### usando pip env
 sudo apt install pipenv # linux
 brew install pipenv # macos
 pipenv install
 
 pipenv install mysql-connector-python
-pipenv run python mysql.py 
+pipenv run python init.py 
 
 pipenv shell # caso queira rodar sem "pipenv run"
-python mysql.py 
+python3 init.py 
+
+
 """
 
 import mysql.connector
