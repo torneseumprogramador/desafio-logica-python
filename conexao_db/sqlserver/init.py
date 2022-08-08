@@ -17,6 +17,9 @@ CREATE TABLE importacao (
 );
 
 
+- https://www.mytecbits.com/internet/python/connect-sql-server-from-python-on-macos
+
+
 """
 
 import pyodbc
@@ -26,7 +29,7 @@ db="migracao"
 user="sa"
 pwd="!1#2a3d4c5g6v"
 
-connection = pyodbc.connect('Driver={SQL Server};'
+connection = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};'
                             'Server=' + server + ';'
                             'Database=' + db + ';'
                             'UID=' + user + ';'
