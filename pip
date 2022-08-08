@@ -1,0 +1,6 @@
+install pip
+https://phoenixnap.com/kb/install-pip-windows
+
+python3 -m pip --version # verifica versão pip
+
+pip --version # verifica versão pip

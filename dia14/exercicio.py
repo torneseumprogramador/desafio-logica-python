@@ -22,3 +22,7 @@ O que terá na classe produto:
 - descrição
 - preço
 '''
+
+
+# https://github.com/torneseumprogramador/python-basic/tree/main/persistencia
+# https://github.com/walterpaulo/logica-python/tree/main/aulas/14/exercicio
