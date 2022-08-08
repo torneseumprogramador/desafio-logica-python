@@ -32,13 +32,22 @@ select * from usuarios;
 # instalando driver mysql pip
 - https://pynative.com/python-mysql-database-connection/
 
+# Pipenv - gerenciador de pacotes python
+- https://thoughtbot.com/blog/how-to-manage-your-python-projects-with-pipenv
 
-pip install mysql-connector-python
-pip install mysql-connector
 
-python mysql.py
+# usando pip env
+sudo apt install pipenv # linux
+brew install pipenv # macos
+pipenv install
 
+pipenv install mysql-connector-python
+pipenv run python mysql.py 
+
+pipenv shell # caso queira rodar sem "pipenv run"
+python mysql.py 
 """
+
 import mysql.connector
 from mysql.connector import Error
 

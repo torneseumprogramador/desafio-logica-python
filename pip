@@ -1,6 +1,18 @@
-install pip
+# install pip
 https://phoenixnap.com/kb/install-pip-windows
 
 python3 -m pip --version # verifica versão pip
 
 pip --version # verifica versão pip
+
+pip install mysql-connector-python
+python mysql.py 
+
+# usando pip env
+sudo apt install pipenv # linux
+brew install pipenv # macos
+pipenv install
+pipenv shell
+
+pipenv install mysql-connector-python
+pipenv run python mysql.py 
