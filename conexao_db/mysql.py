@@ -33,10 +33,6 @@ select * from usuarios;
 - https://pynative.com/python-mysql-database-connection/
 
 
-python3 -m venv mysql_app
-sudo chmod +x mysql_app/bin/activate
-mysql_app/bin/activate
-
 pip install mysql-connector-python
 pip install mysql-connector
 
