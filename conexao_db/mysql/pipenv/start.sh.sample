@@ -1,0 +1,7 @@
+export HOST="<SEU HOST>"
+export DATABASE="<SEU BANCO>"
+export USER="<SEU USER AQUI>"
+export PASS="<SUA SEMNHA>"
+
+pipenv install
+pipenv run python init.py

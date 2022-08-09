@@ -75,14 +75,16 @@ python3 init.py
 
 """
 
+import os
+
 import mysql.connector
 from mysql.connector import Error
 
 try:
-    connection = mysql.connector.connect(host='localhost',
-                                         database='desafio_21_dias_python',
-                                         user='root',
-                                         password='root')
+    connection = mysql.connector.connect(host=os.getenv("HOST"),
+                                         database=os.getenv("DATABASE"),
+                                         user=os.getenv("USER"),
+                                         password=os.getenv("PASS"))
     if connection.is_connected():
         db_Info = connection.get_server_info()
         print("Connected to MySQL Server version ", db_Info)
