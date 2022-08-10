@@ -37,3 +37,5 @@ Utilize um banco de dados profissional para armazenar as informações
 '''
 
 # https://github.com/rhsilva06/Desafio21DiasPython/tree/main/exercicio16
+
+# https://github.com/torneseumprogramador/Desafio21DiasPython-appconsole-sql-server/tree/main/exercicio16
