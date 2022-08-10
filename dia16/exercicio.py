@@ -35,3 +35,5 @@ O que terá na classe produto:
 
 Utilize um banco de dados profissional para armazenar as informações
 '''
+
+# https://github.com/rhsilva06/Desafio21DiasPython/tree/main/exercicio16
