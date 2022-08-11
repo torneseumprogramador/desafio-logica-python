@@ -6,6 +6,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
+    path('sobre', views.sobre),
+    path('contato', views.contato),
+
     path('html', views.html_bruto),
     path('json', views.json),
     path('xml', views.xml_bruto),
