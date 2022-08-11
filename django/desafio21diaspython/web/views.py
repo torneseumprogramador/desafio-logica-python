@@ -1,11 +1,39 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_http_methods
+import datetime
+
+def set_cookie(response, key, value, days_expire=7):
+    if days_expire is None:
+        max_age = 365 * 24 * 60 * 60 
+    else:
+        max_age = days_expire * 24 * 60 * 60
+    
+    expires = datetime.datetime.strftime(datetime.datetime.utcnow() + datetime.timedelta(seconds=max_age), "%a, %d-%b-%Y %H:%M:%S GMT")
+    
+    response.set_cookie(
+        key,
+        value,
+        max_age=max_age,
+        expires=expires
+    )
 
 
+@require_http_methods(["GET", "POST"])
+@csrf_exempt
 def index(request):
+    if request.method == 'POST':
+        print("======= POST ==========")
+
     resposta = {}
-    resposta["conteudo"] = "Estou passando uma chave chamado conteudo para meu template"
-    return render(request, 'home/index.html', resposta)
+    value = request.COOKIES.get('cookie_name')
+    resposta["conteudo"] = f"Estou passando uma chave chamado conteudo para meu template - {value}"
+
+    response = HttpResponse(render(request, 'home/index.html', resposta))
+    set_cookie(response, 'cookie_name', '--danilo--')
+
+    return response
 
 def sobre(request):
     return render(request, 'home/sobre.html')
