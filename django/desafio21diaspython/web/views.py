@@ -45,6 +45,13 @@ def required_decorator(func):
 @csrf_exempt
 @required_decorator
 def index(request):
+    # status não permitido
+    # return HttpResponse("Não permitido", {}, 403)
+
+    # resposta = {}
+    # resposta["conteudo"] = "Agora com API JSON"
+    # return JsonResponse(resposta, status=201)
+
     if request.method == 'POST':
         print("======= POST ==========")
 
