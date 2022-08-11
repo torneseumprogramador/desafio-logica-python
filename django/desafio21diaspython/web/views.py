@@ -1,4 +1,4 @@
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
@@ -19,9 +19,31 @@ def set_cookie(response, key, value, days_expire=7):
         expires=expires
     )
 
+def required_decorator(func):
+    def containing_func(*args):
+        request = args[0]
+
+        value = request.COOKIES.get('cookie_name')
+
+        # if value is None:
+        #     return HttpResponseRedirect("http://www.torneseumprogramador.com.br/")
+
+        try:
+            print("=========[DECORATOR]============")
+            print("=========[cookie]============")
+            print(value)
+            print("=========[args]============")
+            print(args)
+            print("=============================")
+        except Exception as e:
+            raise e
+        return func(*args)
+    return containing_func
+
 
 @require_http_methods(["GET", "POST"])
 @csrf_exempt
+@required_decorator
 def index(request):
     if request.method == 'POST':
         print("======= POST ==========")
