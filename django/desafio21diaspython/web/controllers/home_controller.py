@@ -8,6 +8,3 @@ def index(request):
 
 def sobre(request):
     return render(request, 'home/sobre.html')
-
-def contato(request):
-    return render(request, 'home/contato.html')
