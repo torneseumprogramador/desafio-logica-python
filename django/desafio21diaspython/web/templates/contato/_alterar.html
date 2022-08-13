@@ -1,0 +1,20 @@
+<form class="form-subscribe" action="/contato/alterar?id={{contato.id}}" method="post" id="contactForm" >
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="col">
+            <input class="form-control form-control-lg" id="nome" type="text"
+                placeholder="Digite o seu nome" name="nome" value="{{contato.nome}}" required="required" />
+    
+            <input class="form-control form-control-lg" id="email" value="{{contato.email}}" type="email"
+                placeholder="Digite o seu email" name="email" required="required" />
+    
+            <input class="form-control form-control-lg" id="senha" value="{{contato.senha}}" type="password"
+                placeholder="Digite a sua senha" name="senha" required="required" />
+    
+            <button class="btn btn-primary btn-lg" id="submitButton"
+                type="submit">Alterar</button>
+        </div>
+    </div>
+    
+</form>

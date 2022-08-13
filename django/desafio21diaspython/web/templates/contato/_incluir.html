@@ -1,0 +1,18 @@
+<form class="form-subscribe" action="/contato/cadastrar" method="post" id="contactForm" >
+    {% csrf_token %}
+    <div class="row">
+        <div class="col">
+            <input class="form-control form-control-lg" id="nome" type="text"
+                placeholder="Digite o seu nome" name="nome" required="required" />
+
+            <input class="form-control form-control-lg" id="email" type="email"
+                placeholder="Digite o seu email" name="email" required="required" />
+
+            <input class="form-control form-control-lg" id="senha" type="password"
+                placeholder="Digite a sua senha" name="senha" required="required" />
+
+            <button class="btn btn-primary btn-lg" id="submitButton"
+                type="submit">Incluir</button>
+        </div>
+    </div>
+</form>

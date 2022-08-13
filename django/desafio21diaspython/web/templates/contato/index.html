@@ -7,26 +7,21 @@
                     <!-- Page heading-->
                     <h1 class="mb-5">Digite o seu email e entraremos em contato!</h1>
                     <!-- Signup form-->
-                    <form class="form-subscribe" action="/contato/cadastrar" method="post" id="contactForm" >
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-control form-control-lg" id="emailAddress" type="email"
-                                    placeholder="Email Address" name="email" required="required" />
-                            </div>
-
-                            <div class="col-auto">
-                                <button class="btn btn-primary btn-lg" id="submitButton"
-                                    type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                    {% if contato is None %}
+                        {% include '../contato/_incluir.html' %}
+                    {% else %}
+                        {% include '../contato/_alterar.html' %}
+                    {% endif %}
                     <div id="submitSuccessMessage">
                         <div class="text-center mb-3">
                             <br>
-                            {% if mensagem != None %}
-                                <div class="alert alert-warning" role="alert">
-                                    {{mensagem}}
+                            {% if erro != None %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{erro}}
+                                </div>
+                            {% elif sucesso != None %}
+                                <div class="alert alert-success" role="alert">
+                                    {{sucesso}}
                                 </div>
                             {% endif %}
                         </div>
@@ -36,6 +31,45 @@
         </div>
     </div>
 </header>
+<section class="testimonials text-center bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <h2 class="mb-4">Tabela de contatos</h2>
+            </div>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contato in contatos %}
+                <tr>
+                    <th scope="row">{{contato.id}}</th>
+                    <td>{{contato.nome}}</td>
+                    <td>{{contato.email}}</td>
+                    <td>
+                        <a href="/contato?id={{contato.id}}" class="btn btn-warning">
+                            Alterar
+                        </a>
+                    </td>
+                    <td>
+                        <a href="javascript:;" onclick="if(confirm('Confirma?')) { window.location.href = '/contato/excluir?id={{contato.id}}' }" class="btn btn-danger">
+                            Excluir
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
 <!-- Testimonials-->
 <section class="testimonials text-center bg-light">
     <div class="container">

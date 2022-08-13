@@ -11,6 +11,9 @@ urlpatterns = [
 
     path('contato', contato_controller.index),
     path('contato/cadastrar', contato_controller.cadastrar),
+    # path('contato/<int:id>/excluir', contato_controller.excluir),
+    path('contato/excluir', contato_controller.excluir),
+    path('contato/alterar', contato_controller.alterar),
 
     path('login', login_controller.index),
     path('logar', login_controller.logar),
