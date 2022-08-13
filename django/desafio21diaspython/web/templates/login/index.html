@@ -1,0 +1,29 @@
+{% include '../shared/_header.html' with titulo="Login" %}
+<!-- Masthead-->
+<link href="/public/css/login.css" rel="stylesheet" type="text/css" />
+<header class="masthead">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-xl-6">
+                <div class="text-center text-white" id="formContact">
+                    <!-- Page heading-->
+                    <h1 class="mb-5">Digite o seu email e senha para entrar</h1>
+
+                    <form action="/logar" method="post">
+                        {% csrf_token %}
+                        <input type="email" required="required" id="email" class="fadeIn second" name="email" placeholder="Digite o seu email">
+                        <input type="password" required="required" id="senha" class="fadeIn third" name="senha" placeholder="Digite a sua senha">
+                        {% if mensagem is not None %}
+                            <div class="alert alert-danger" role="alert" style="margin-top: 20px;">
+                                {{mensagem}}
+                            </div>
+                        {% endif %}
+                        <input type="submit" class="fadeIn fourth" value="Entrar">
+                    </form>
+                    <!-- Signup form-->
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% include '../shared/_footer.html' %}

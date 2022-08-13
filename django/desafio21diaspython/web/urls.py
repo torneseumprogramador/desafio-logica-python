@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.urls import path
 
 from . import views
-from .controllers import contato_controller, home_controller
+from .controllers import contato_controller, home_controller, login_controller
 
 urlpatterns = [
     path('', home_controller.index),
@@ -11,6 +11,10 @@ urlpatterns = [
 
     path('contato', contato_controller.index),
     path('contato/cadastrar', contato_controller.cadastrar),
+
+    path('login', login_controller.index),
+    path('logar', login_controller.logar),
+    path('sair', login_controller.sair),
 
     path('html', views.html_bruto),
     path('json', views.json),

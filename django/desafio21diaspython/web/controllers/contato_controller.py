@@ -1,11 +1,14 @@
 import json
 
 from django.shortcuts import render
+from ..seguranca.funcoes import required_decorator, usuario_logado
+# from django.views.decorators.csrf import csrf_exempt
 
-
+@required_decorator
 def index(request):
-    return render(request, 'contato/index.html')
+    return render(request, 'contato/index.html', {"sessao": usuario_logado(request)["nome"] })
 
+# @csrf_exempt # decorator para desabilitar o csrf security
 def cadastrar(request):
     email = request.POST["email"]
     if email == "" or email is None:
